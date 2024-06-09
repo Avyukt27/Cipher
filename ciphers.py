@@ -1,10 +1,10 @@
 from itertools import islice, cycle
 
 def get_letter_value(letter: str) -> int:
-    return ord(letter) - 64
+    return ord(letter) - 65
 
 def get_letter_from_value(value: int) -> str:
-    return chr(value + 64)
+    return chr(value + 65)
 
 def caeser_cipher(text: str, shift: int, decrypt: bool) -> str:
     text_lst: list[str] = list(text)
@@ -17,7 +17,7 @@ def caeser_cipher(text: str, shift: int, decrypt: bool) -> str:
         value: int = get_letter_value(letter)
         if not decrypt:
             result += get_letter_from_value(value + shift)
-            
+
     return result
 
 def vigenère_cipher(text: str, key: str, decrypt: bool) -> str:
@@ -34,7 +34,8 @@ def vigenère_cipher(text: str, key: str, decrypt: bool) -> str:
     for index, letter in enumerate(text_lst):
         letter_value: int = get_letter_value(letter)
         key_value: int = get_letter_value(key_lst[index])
-        new_value: int = letter_value + key_value
+        new_letter: str = get_letter_from_value((letter_value + key_value) % 26)
+        print(letter, letter_value, key_value, new_letter)
 
     return result
 print(vigenère_cipher("DCODE", "KEY", False))

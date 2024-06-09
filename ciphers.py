@@ -61,6 +61,7 @@ def vigenère_cipher(text: str, key: str, decode: bool = False) -> str:
 
     return result
 
+# Testing
 if __name__ == '__main__':
     print(f"Caeser Cipher (Shift: 3→)\nEncoding: {caeser_cipher("HELLO", 3)}")
     print(f"Decoding: {caeser_cipher("KHOOR", 3, True)}\n")

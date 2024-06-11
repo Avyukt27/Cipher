@@ -192,10 +192,10 @@ if __name__ == '__main__':
     print(f"Decoding: {rail_fence_cipher('HOELL', 3, True)}\n")
 
     print(f"ASCII Binary\nEncoding: {ascii.binary("HELLO")}")
-    print(f"Decoding: {ascii.binary("01001000 01000101 01001100 01001100 01001111", True)}")
+    print(f"Decoding: {ascii.binary("01001000 01000101 01001100 01001100 01001111", True)}\n")
 
     print(f"ASCII Decimal\nEncoding: {ascii.decimal("HELLO")}")
-    print(f"Decoding: {ascii.decimal("72 69 76 76 79", True)}")
+    print(f"Decoding: {ascii.decimal("72 69 76 76 79", True)}\n")
 
     print(f"ASCII Hexadimal\nEncoding: {ascii.hexadecimal("HELLO")}")
-    print(f"Decoding: {ascii.hexadecimal("01001000 01000101 01001100 01001100 01001111", True)}")
+    print(f"Decoding: {ascii.hexadecimal("01001000 01000101 01001100 01001100 01001111", True)}\n")

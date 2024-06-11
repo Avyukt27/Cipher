@@ -19,7 +19,7 @@ def caeser_cipher(text: str, shift: int, decode: bool = False) -> str:
 
     # Begin
     result: str = ""
-    for letter in list(text):
+    for letter in text:
         # Get Value of each Letter
         value: int = get_letter_value(letter)
         # Get Letter from Value
@@ -116,11 +116,39 @@ def rail_fence_cipher(text: str, rails: int, decode: bool = False):
     return "".join(result)
 
 class ascii:
+    '''
+    Class for doing ASCII encoding and decoding on text in multiple formats.
+    '''
+
     @staticmethod
-    def binary(text: str, decode: bool = False) -> str:
+    def decimal(text: str, decode: bool = False) -> str:
+        '''
+        ASCII Decimal\n
+        Converts a string to and from decimal using ASCII
+        '''
         result: str = ""
         if not decode:
-            for letter in list(text):
+            for letter in text:
+                value: str = str(ord(letter))
+                result += f"{value} "
+            return result
+        for number in text.split():
+            try:
+                value = chr(int(number))
+                result += value
+            except ValueError:
+                print("Not a number")
+        return result
+
+    @staticmethod
+    def binary(text: str, decode: bool = False) -> str:
+        '''
+        ASCII Binary\n
+        Converts a string to and from binary using ASCII
+        '''
+        result: str = ""
+        if not decode:
+            for letter in text:
                 value: str = bin(ord(letter)).removeprefix("0b")
                 result += f"0{value} "
             return result
@@ -136,9 +164,15 @@ class ascii:
 if __name__ == '__main__':
     print(f"Caeser Cipher (Shift: 3→)\nEncoding: {caeser_cipher("HELLO", 3)}")
     print(f"Decoding: {caeser_cipher("KHOOR", 3, True)}\n")
+
     print(f"Vigenère Cipher (Key: 'KEY')\nEncoding: {vigenère_cipher('HELLO', 'KEY')}")
     print(f"Decoding: {vigenère_cipher('RIJVS', 'KEY', True)}\n")
+    
     print(f"Rail Fence Cipher (Key: 'KEY')\nEncoding: {rail_fence_cipher('HELLO', 3)}")
     print(f"Decoding: {rail_fence_cipher('HOELL', 3, True)}\n")
+
     print(f"ASCII Binary\nEncoding: {ascii.binary("HELLO")}")
     print(f"Decoding: {ascii.binary("01001000 01000101 01001100 01001100 01001111", True)}")
+
+    print(f"ASCII Decimal\nEncoding: {ascii.decimal("HELLO")}")
+    print(f"Decoding: {ascii.decimal("72 69 76 76 79", True)}")

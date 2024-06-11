@@ -161,6 +161,26 @@ class ascii:
         return result
     
     @staticmethod
+    def octal(text: str, decode: bool = False) -> str:
+        '''
+        ASCII Hexadecimal\n
+        Converts a string to and from hexadecimal using ASCII
+        '''
+        result: str = ""
+        if not decode:
+            for letter in text:
+                value: str = oct(ord(letter)).removeprefix("0o")
+                result += f"{value} "
+            return result
+        for octa in text.split():
+            try:
+                value = chr(int(octa, 8))
+                result += value
+            except ValueError:
+                print(f"Not Octal: {octa}")
+        return result
+
+    @staticmethod
     def hexadecimal(text: str, decode: bool = False) -> str:
         '''
         ASCII Hexadecimal\n
@@ -174,7 +194,7 @@ class ascii:
             return result
         for hexa in text.split():
             try:
-                value = chr(int(hexa, 2))
+                value = chr(int(hexa, 16))
                 result += value
             except ValueError:
                 print(f"Not Hexadecimal: {hexa}")
@@ -198,4 +218,7 @@ if __name__ == '__main__':
     print(f"Decoding: {ascii.decimal("72 69 76 76 79", True)}\n")
 
     print(f"ASCII Hexadimal\nEncoding: {ascii.hexadecimal("HELLO")}")
-    print(f"Decoding: {ascii.hexadecimal("01001000 01000101 01001100 01001100 01001111", True)}\n")
+    print(f"Decoding: {ascii.hexadecimal("48 45 4c 4c 4f", True)}\n")
+
+    print(f"ASCII Octal\nEncoding: {ascii.octal("HELLO")}")
+    print(f"Decoding: {ascii.octal("110 105 114 114 117", True)}\n")

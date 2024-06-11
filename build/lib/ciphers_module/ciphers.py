@@ -27,10 +27,10 @@ def caeser_cipher(text: str, shift: int, decode: bool = False) -> str:
 
     return result
 
-def vigenère_cipher(text: str, key: str, decode: bool = False) -> str:
+def vigenere_cipher(text: str, key: str, decode: bool = False) -> str:
     '''
-    Vigenère Cipher\n
-    Uses a Vigenère Cipher on {text} with key {key}\n
+    Vigenere Cipher\n
+    Uses a Vigenere Cipher on {text} with key {key}\n
     Set {decode} to True to decode {text} with key {key}
     '''
     # Make everything Upper Case
@@ -205,8 +205,8 @@ if __name__ == '__main__':
     print(f"Caeser Cipher (Shift: 3→)\nEncoding: {caeser_cipher("HELLO", 3)}")
     print(f"Decoding: {caeser_cipher("KHOOR", 3, True)}\n")
 
-    print(f"Vigenère Cipher (Key: 'KEY')\nEncoding: {vigenère_cipher('HELLO', 'KEY')}")
-    print(f"Decoding: {vigenère_cipher('RIJVS', 'KEY', True)}\n")
+    print(f"Vigenere Cipher (Key: 'KEY')\nEncoding: {vigenere_cipher('HELLO', 'KEY')}")
+    print(f"Decoding: {vigenere_cipher('RIJVS', 'KEY', True)}\n")
     
     print(f"Rail Fence Cipher (Key: 'KEY')\nEncoding: {rail_fence_cipher('HELLO', 3)}")
     print(f"Decoding: {rail_fence_cipher('HOELL', 3, True)}\n")

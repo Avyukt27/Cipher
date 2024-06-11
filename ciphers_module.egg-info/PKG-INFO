@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ciphers_module
-Version: 1.1.3
+Version: 1.1.4
 Author: Avyukt27
 Author-email: <avyukt.aggarwal007@gmail.com>
 Keywords: python,cipher,encode,encrypt,decrypt,decode
@@ -76,15 +76,15 @@ To Run
 caeser_cipher(text, shift, decode) # decode is automatically false
 ```
 
-### VigenÃ¨re Cipher
+### Vigenere Cipher
 
-Performs a VigenÃ¨re Cipher on a given string with given key
+Performs a Vigenere Cipher on a given string with given key
 
 ```python
-def vigenÃ¨re_cipher(text: str, key: str, decode: bool = False) -> str:
+def vigenere_cipher(text: str, key: str, decode: bool = False) -> str:
     '''
-    VigenÃ¨re Cipher\n
-    Uses a VigenÃ¨re Cipher on {text} with key {key}\n
+    Vigenere Cipher\n
+    Uses a Vigenere Cipher on {text} with key {key}\n
     Set {decode} to True to decode {text} with key {key}
     '''
     # Make everything Upper Case
@@ -117,7 +117,7 @@ def vigenÃ¨re_cipher(text: str, key: str, decode: bool = False) -> str:
 To Run
 
 ```python
-vigenÃ¨re_cipher(text, key, decode) # decode is automatically false
+vigenere_cipher(text, key, decode) # decode is automatically false
 ```
 
 ### Rail Fence Cipher

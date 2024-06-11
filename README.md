@@ -68,15 +68,15 @@ To Run
 caeser_cipher(text, shift, decode) # decode is automatically false
 ```
 
-### Vigenère Cipher
+### Vigenere Cipher
 
-Performs a Vigenère Cipher on a given string with given key
+Performs a Vigenere Cipher on a given string with given key
 
 ```python
-def vigenère_cipher(text: str, key: str, decode: bool = False) -> str:
+def vigenere_cipher(text: str, key: str, decode: bool = False) -> str:
     '''
-    Vigenère Cipher\n
-    Uses a Vigenère Cipher on {text} with key {key}\n
+    Vigenere Cipher\n
+    Uses a Vigenere Cipher on {text} with key {key}\n
     Set {decode} to True to decode {text} with key {key}
     '''
     # Make everything Upper Case
@@ -109,7 +109,7 @@ def vigenère_cipher(text: str, key: str, decode: bool = False) -> str:
 To Run
 
 ```python
-vigenère_cipher(text, key, decode) # decode is automatically false
+vigenere_cipher(text, key, decode) # decode is automatically false
 ```
 
 ### Rail Fence Cipher

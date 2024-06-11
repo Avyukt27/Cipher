@@ -163,8 +163,8 @@ class ascii:
     @staticmethod
     def octal(text: str, decode: bool = False) -> str:
         '''
-        ASCII Hexadecimal\n
-        Converts a string to and from hexadecimal using ASCII
+        ASCII Octal\n
+        Converts a string to and from octal using ASCII
         '''
         result: str = ""
         if not decode:

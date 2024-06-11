@@ -221,4 +221,4 @@ if __name__ == '__main__':
     print(f"Decoding: {ascii.hexadecimal("48 45 4c 4c 4f", True)}\n")
 
     print(f"ASCII Octal\nEncoding: {ascii.octal("HELLO")}")
-    print(f"Decoding: {ascii.octal("110 105 114 114 117", True)}\n")
+    print(f"Decoding: {ascii.octal("01001000 01000101 01001100 01001100 01001111", True)}\n")

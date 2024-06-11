@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '1.0.1'
+VERSION = '1.1.0'
 DESCRIPTION = 'Encrypt and Decrypt text'
 
 with open("README.md", "r") as f:

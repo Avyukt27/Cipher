@@ -1,13 +1,13 @@
 from setuptools import setup, find_packages
 
-VERSION = '1.1.1'
+VERSION = '1.1.2'
 
 with open("README.md", "r") as f:
     long_description = f.read()
 
 # Setting up
 setup(
-    name="ciphers-module",
+    name="ciphers_module",
     version=VERSION,
     author="Avyukt27",
     author_email="<avyukt.aggarwal007@gmail.com>",

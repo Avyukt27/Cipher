@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: ciphers
+Version: 1.0.0
+Summary: Encrypt and Decrypt text
+Author: Avyukt27
+Author-email: <avyukt.aggarwal007@gmail.com>
+Keywords: python,cipher,encode,encrypt,decrypt,decode
+Classifier: Development Status :: 3 - First Release
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+A package that allows encryption and decryption of text using methods.

@@ -17,11 +17,9 @@ def caeser_cipher(text: str, shift: int, decode: bool = False) -> str:
     # Make everything Upper Case
     text.upper()
 
-    # Make Lists of Characters
-    text_lst: list[str] = list(text)
+    # Begin
     result: str = ""
-
-    for letter in text_lst:
+    for letter in list(text):
         # Get Value of each Letter
         value: int = get_letter_value(letter)
         # Get Letter from Value
@@ -117,6 +115,23 @@ def rail_fence_cipher(text: str, rails: int, decode: bool = False):
 
     return "".join(result)
 
+class ascii:
+    @staticmethod
+    def binary(text: str, decode: bool = False) -> str:
+        result: str = ""
+        if not decode:
+            for letter in list(text):
+                value: str = bin(ord(letter)).removeprefix("0b")
+                result += f"0{value} "
+            return result
+        for byte in text.split():
+            try:
+                value = chr(int(byte, 2))
+                result += value
+            except ValueError:
+                print(f"Not Binary: {byte}")
+        return result
+
 # Testing
 if __name__ == '__main__':
     print(f"Caeser Cipher (Shift: 3→)\nEncoding: {caeser_cipher("HELLO", 3)}")
@@ -125,3 +140,5 @@ if __name__ == '__main__':
     print(f"Decoding: {vigenère_cipher('RIJVS', 'KEY', True)}\n")
     print(f"Rail Fence Cipher (Key: 'KEY')\nEncoding: {rail_fence_cipher('HELLO', 3)}")
     print(f"Decoding: {rail_fence_cipher('HOELL', 3, True)}\n")
+    print(f"ASCII Binary\nEncoding: {ascii.binary("HELLO")}")
+    print(f"Decoding: {ascii.binary("01001000 01000101 01001100 01001100 01001111", True)}")

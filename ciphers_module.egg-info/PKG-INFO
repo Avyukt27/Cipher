@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ciphers_module
-Version: 1.1.4
+Version: 1.1.5
 Author: Avyukt27
 Author-email: <avyukt.aggarwal007@gmail.com>
 Keywords: python,cipher,encode,encrypt,decrypt,decode
@@ -9,6 +9,20 @@ Description-Content-Type: text/markdown
 # Ciphers
 
 Python module for implementing ciphers
+
+## Installation
+
+Install using
+
+```powershell
+pip install ciphers_module
+```
+
+Import using
+
+```python
+import ciphers_module
+```
 
 ## Methods
 

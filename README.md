@@ -2,6 +2,20 @@
 
 Python module for implementing ciphers
 
+## Installation
+
+Install using
+
+```powershell
+pip install ciphers_module
+```
+
+Import using
+
+```python
+import ciphers_module
+```
+
 ## Methods
 
 ### Get Letter Value

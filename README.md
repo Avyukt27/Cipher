@@ -198,7 +198,7 @@ Following Methods are in the ASCII class
 
 ### ASCII Decimal Cipher
 
-Encodes a string into Decimal using ASCII notation
+Encode/Decodes a string in Decimal using ASCII notation
 
 ```python
 def decimal(text: str, decode: bool = False) -> str:
@@ -229,7 +229,7 @@ ascii.decimal(text, decode) # decode is automatically false
 
 ### ASCII Binary Cipher
 
-Encodes a string into Binary using ASCII notation
+Encode/Decodes a string in Binary using ASCII notation
 
 ```python
 def binary(text: str, decode: bool = False) -> str:
@@ -260,7 +260,7 @@ ascii.binary(text, decode) # decode is automatically false
 
 ### ASCII Octal Cipher
 
-Encodes a string into Octal using ASCII notation
+Encode/Decodes a string in Octal using ASCII notation
 
 ```python
 def octal(text: str, decode: bool = False) -> str:
@@ -291,7 +291,7 @@ ascii.octal(text, decode) # decode is automatically false
 
 ### ASCII Hexadecimal Cipher
 
-Encodes a string into Hexadecimal using ASCII notation
+Encode/Decodes a string in Hexadecimal using ASCII notation
 
 ```python
 def hexadecimal(text: str, decode: bool = False) -> str:
@@ -318,4 +318,85 @@ To Run
 
 ```python
 ascii.hexadecimal(text, decode) # decode is automatically false
+```
+
+### Morse Code
+
+Encode/Decodes a string in Morse Code
+
+```python
+def morse_code(text: str, decode: bool = False) -> str:
+    '''
+    Morse Code\n
+    Encodes/Decodes a string in Morse Code
+    '''
+    code: dict[str, str] = {
+        "A": ".-",
+        "B": "-...",
+        "C": "-.-.",
+        "D": "-..",
+        "E": ".",
+        "F": "..-.",
+        "G": "--.",
+        "H": "....",
+        "I": "..",
+        "J": ".---",
+        "K": "-.-",
+        "L": ".-..",
+        "M": "--",
+        "N": "-.",
+        "O": "---",
+        "P": ".--.",
+        "Q": "--.-",
+        "R": ".-.",
+        "S": "...",
+        "T": "-",
+        "U": "..-",
+        "V": "...-",
+        "W": ".--",
+        "X": "-..-",
+        "Y": "-.--",
+        "Z": "--..",
+        "1": ".----",
+        "2": "..---",
+        "3": "...--",
+        "4": "....-",
+        "5": ".....",
+        "6": "-....",
+        "7": "--...",
+        "8": "---..",
+        "9": "----.",
+        "0": "-----",
+        " ": "/",
+    }
+    
+    input_text: str = text.upper()
+    if not decode:
+        input_tokens: list[str] = [*input_text]
+
+        result: str = ""
+        for token in input_tokens:
+            try:
+                result += code[token] + " "
+            except KeyError:
+                result += token + " "
+        
+        return result
+    
+    input_tokens: list[str] = input_text.split()
+
+    result: str = ""
+    for token in input_tokens:
+        try:
+            result += list(code.keys())[list(code.values()).index(token)]
+        except ValueError:
+            result += token
+
+    return result
+```
+
+To run
+
+```python
+morse_code(text, decode) # decode is automatically false
 ```

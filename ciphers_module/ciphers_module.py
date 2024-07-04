@@ -200,7 +200,7 @@ class ascii:
                 print(f"Not Hexadecimal: {hexa}")
         return result
 
-def morse_code(text: str) -> str:
+def morse_code(text: str, decode: bool = False) -> str:
     '''
     Morse Code\n
     Encodes/Decodes a string in Morse Code
@@ -246,14 +246,26 @@ def morse_code(text: str) -> str:
     }
     
     input_text: str = text.upper()
-    input_tokens: list[str] = [*input_text]
+    if not decode:
+        input_tokens: list[str] = [*input_text]
+
+        result: str = ""
+        for token in input_tokens:
+            try:
+                result += code[token] + " "
+            except KeyError:
+                result += token + " "
+        
+        return result
+    
+    input_tokens: list[str] = input_text.split()
 
     result: str = ""
     for token in input_tokens:
         try:
-            result += code[token] + " "
-        except KeyError:
-            result += token + " "
+            result += list(code.keys())[list(code.values()).index(token)]
+        except ValueError:
+            result += token
 
     return result
 
@@ -278,6 +290,7 @@ if __name__ == '__main__':
     print(f"Decoding: {ascii.hexadecimal("48 45 4c 4c 4f", True)}\n")
 
     print(f"ASCII Octal\nEncoding: {ascii.octal("HELLO")}")
-    print(f"Decoding: {ascii.octal("01001000 01000101 01001100 01001100 01001111", True)}\n")
+    print(f"Decoding: {ascii.octal(" 110 105 114 114 117", True)}\n")
 
-    print(morse_code("Hello My Name is Avyukt"))
+    print(f"Morse Code\nEncoding: {morse_code("HELLO")}")
+    print(f"Decoding: {morse_code(".... . .-.. .-.. ---", True)}\n")
